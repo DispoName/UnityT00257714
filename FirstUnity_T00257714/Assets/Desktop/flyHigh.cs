@@ -8,6 +8,7 @@ public class flyHigh : MonoBehaviour
     Rigidbody rb;
     float thrust = 5;
     float turningSpeed = 100;
+    public GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +53,13 @@ public class flyHigh : MonoBehaviour
         {
             transform.Rotate(Vector3.down, turningSpeed * Time.deltaTime);
         }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 10);
+        }
+
+
     }
 }

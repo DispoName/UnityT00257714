@@ -47,5 +47,10 @@ public class AnimatedMovement : MonoBehaviour
             transform.position -= transform.forward * Time.deltaTime;
             characterAnimation.SetBool("isBack", true);
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position += transform.up * Time.deltaTime * 5;
+        }
     }
 }
