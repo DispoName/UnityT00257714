@@ -9,13 +9,14 @@ public class spawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.A))
+
+        int decider = UnityEngine.Random.Range(0, 100000);
+        int chance = 30;
+
+        if (decider < chance)
         {
             Instantiate(cubePrefab, transform.position, Quaternion.identity);
         }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            Instantiate(cubePrefab, transform.position, Quaternion.identity);
-        }
+    
     }
 }
