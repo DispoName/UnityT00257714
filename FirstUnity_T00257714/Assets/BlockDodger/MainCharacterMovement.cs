@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class MainCharacterMovement : MonoBehaviour{
 
@@ -25,6 +27,11 @@ public class MainCharacterMovement : MonoBehaviour{
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(-moveSpeed * Time.deltaTime, 0, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
