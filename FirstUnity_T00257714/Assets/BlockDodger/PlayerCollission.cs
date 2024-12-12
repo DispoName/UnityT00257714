@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCollission : MonoBehaviour
 {
     public GameObject loseText;
+    public GameObject loseText2;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerCollission : MonoBehaviour
         if (collision.gameObject.name == "Cube(Clone)")
         {
             loseText.SetActive(true);
+            loseText2.SetActive(true);
         }
     }
 }
